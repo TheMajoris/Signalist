@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import NavItems from './NavItems'
 
 const Header = () => {
   return (
@@ -9,6 +10,9 @@ const Header = () => {
             <Link href="/">
                 <Image src="assets/icons/logo.svg" alt="Signalynx logo" width={140} height={32} className="h-8 w-auto cursor-pointer" />
             </Link>
+            <nav className="hidden sm:block">
+                <NavItems />
+            </nav>
         </div>
     </header>
   )
