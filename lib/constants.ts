@@ -61,3 +61,22 @@ export const MARKET_OVERVIEW_WIDGET_CONFIG = {
     showSymbolLogo: true, // show logo next to symbols
     showChart: true, // display mini chart
 };
+
+export const HEATMAP_WIDGET_CONFIG = {
+    dataSource: 'SPX500',
+    blockSize: 'market_cap_basic',
+    blockColor: 'change',
+    grouping: 'sector',
+    isTransparent: true,
+    locale: 'en',
+    symbolUrl: '',
+    colorTheme: 'dark',
+    exchanges: [],
+    hasTopBar: false,
+    isDataSetEnabled: false,
+    isZoomEnabled: true,
+    hasSymbolTooltip: true,
+    isMonoSize: false,
+    width: '100%',
+    height: '600',
+};

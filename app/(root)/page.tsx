@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import TradingViewWidget from '@/components/TradingViewWidget'
-import { MARKET_OVERVIEW_WIDGET_CONFIG } from '@/lib/constants'
+import { HEATMAP_WIDGET_CONFIG, MARKET_OVERVIEW_WIDGET_CONFIG } from '@/lib/constants'
 
 const Home = () => {
     const scriptUrl = `https://s3.tradingview.com/external-embedding/embed-widget-`
@@ -22,7 +22,7 @@ const Home = () => {
                 <TradingViewWidget
                     title="Stock Heatmap"
                     scriptUrl={`${scriptUrl}stock-heatmap.js`}
-                    config={MARKET_OVERVIEW_WIDGET_CONFIG}
+                    config={HEATMAP_WIDGET_CONFIG}
                     className="custom-chart"
                     height={600}
                 />
