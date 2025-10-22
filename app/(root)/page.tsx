@@ -4,7 +4,7 @@ import TradingViewWidget from '@/components/TradingViewWidget'
 import { MARKET_OVERVIEW_WIDGET_CONFIG } from '@/lib/constants'
 
 const Home = () => {
-
+    const scriptUrl = `https://s3.tradingview.com/external-embedding/embed-widget-`
 
   return (
     <div className="flex min-h home-wrapper">
@@ -12,7 +12,7 @@ const Home = () => {
             <div className="md:col-span-1 xl:col-span-1">
                 <TradingViewWidget
                     title="Market Overview"
-                    scriptUrl="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js"
+                    scriptUrl={`${scriptUrl}market-overview.js`}
                     config={MARKET_OVERVIEW_WIDGET_CONFIG}
                     className="custom-chart"
                     height={600}
@@ -21,7 +21,7 @@ const Home = () => {
             <div className="md-col-span xl:col-span-2">
                 <TradingViewWidget
                     title="Stock Heatmap"
-                    scriptUrl="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js"
+                    scriptUrl={`${scriptUrl}stock-heatmap.js`}
                     config={MARKET_OVERVIEW_WIDGET_CONFIG}
                     className="custom-chart"
                     height={600}
