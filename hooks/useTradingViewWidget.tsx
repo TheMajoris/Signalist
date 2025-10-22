@@ -1,9 +1,18 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useMemo } from 'react'
 
+/**
+ * Custom hook to embed TradingView widgets.
+ * @param scriptUrl - The TradingView widget script URL
+ * @param config - Widget configuration object
+ * @param height - Widget height in pixels
+ */
 const useTradingViewWidget = (scriptUrl: string, config: Record<string, unknown>, height: number) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
+    
+    // Memoize the stringified config to prevent unnecessary re-renders
+    const configString = useMemo(() => JSON.stringify(config), [config]);
 
     useEffect(
         () => {
@@ -14,7 +23,7 @@ const useTradingViewWidget = (scriptUrl: string, config: Record<string, unknown>
             const script = document.createElement("script");
             script.src = scriptUrl;
             script.async = true;
-            script.innerHTML = JSON.stringify(config);
+            script.textContent = configString;
 
             containerRef.current.appendChild(script);
             containerRef.current.dataset.loaded = 'true';
@@ -26,7 +35,7 @@ const useTradingViewWidget = (scriptUrl: string, config: Record<string, unknown>
                 }
             }
         },
-        [scriptUrl, config, height]
+        [scriptUrl, configString, height]
     );
 
     return containerRef;
