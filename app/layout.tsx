@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Signalynx",
+  title: "Signalist",
   description: "Smart market signals connected. Track trends, trades, and opportunities effortlessly.",
 };
 
