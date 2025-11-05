@@ -13,6 +13,13 @@ const layout = ({ children }: {children : React.ReactNode }) => {
 
             <div className="pb-6 lg:pb-8 flex-1">{children}</div>
         </section>
+
+        <section className="auth-right-section">
+            <div >
+
+            </div>
+
+        </section>
     </main>
   )
 }
