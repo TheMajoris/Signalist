@@ -20,9 +20,9 @@ const SignUp = () => {
             email: '',
             password: '',
             country: 'US',
-            investmentGoals: 'Growth',
-            riskTolerance: 'Medium',
-            preferredIndustry: 'Technology'
+            investmentGoals: '',
+            riskTolerance: '',
+            preferredIndustry: ''
         },
 
         mode: 'onBlur'
@@ -57,7 +57,6 @@ const SignUp = () => {
                     error={errors.email}
                     validation={{ required: 'Email address is required', pattern: /^\w+@\w+\.\w+$/ }}
                 />
-
                 <InputField 
                     name="password"
                     label="Password"
