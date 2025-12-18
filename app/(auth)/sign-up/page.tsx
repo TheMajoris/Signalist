@@ -1,6 +1,6 @@
 'use client';
 
-import CountrySelectField from '@/components/forms/CountrySelectField';
+import {CountrySelectField} from '@/components/forms/CountrySelectField';
 import InputField from '@/components/forms/inputField';
 import SelectField from '@/components/forms/selectField';
 import { Button } from '@/components/ui/button';
@@ -57,6 +57,15 @@ const SignUp = () => {
                     error={errors.email}
                     validation={{ required: 'Email address is required', pattern: /^\w+@\w+\.\w+$/ }}
                 />
+
+                <CountrySelectField 
+                    name="country"
+                    label="Country"
+                    control={control}
+                    error={errors.country}
+                    required
+                />
+                
                 <InputField 
                     name="password"
                     label="Password"
