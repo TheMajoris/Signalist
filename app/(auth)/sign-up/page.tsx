@@ -1,6 +1,7 @@
 'use client';
 
 import {CountrySelectField} from '@/components/forms/CountrySelectField';
+import FooterLink from '@/components/forms/FooterLink';
 import InputField from '@/components/forms/inputField';
 import SelectField from '@/components/forms/selectField';
 import { Button } from '@/components/ui/button';
@@ -47,7 +48,7 @@ const SignUp = () => {
                     placeholder="John Doe"
                     register={register}
                     error={errors.fullName}
-                    validation={{ required: 'Full Name is Required', minLength: 2}}
+                    validation={{ required: 'Full Name is required', minLength: 2}}
                 />
                 <InputField 
                     name="email"
@@ -69,19 +70,11 @@ const SignUp = () => {
                 <InputField 
                     name="password"
                     label="Password"
-                    placeholder="••••••••"
+                    placeholder="Enter a strong password"
                     type="password"
                     register={register}
                     error={errors.password}
-                    validation={{ required: 'Password is required', minLength: 8 }}
-                />
-                <InputField 
-                    name="fullName"
-                    label="Full Name"
-                    placeholder="John Doe"
-                    register={register}
-                    error={errors.fullName}
-                    validation={{ required: 'Full Name is Required', minLength: 2}}
+                    validation={{ required: 'Password longer than 8 characters is required', minLength: 8 }}
                 />
 
                 <SelectField 
@@ -117,6 +110,8 @@ const SignUp = () => {
                 <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
                     { isSubmitting ? 'Creating account' : 'Start Your Investing Journey' }
                 </Button>
+
+                <FooterLink text="Already have an account?" linkText="Sign in" href="/sign-in" />
             </form>
         </>
     )
