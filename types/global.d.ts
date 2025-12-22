@@ -1,0 +1,42 @@
+declare global {
+    type SignInFormData = {
+        email: string;
+        password: string;
+    };
+
+    type SignUpFormData = {
+        fullName: string;
+        email: string;
+        password: string;
+        country: string;
+        investmentGoals: string;
+        riskTolerance: string;
+        preferredIndustry: string;
+    };
+
+    type SelectFieldProps = {
+        name: string;
+        label: string;
+        placeholder: string;
+        options: readonly Option[];
+        control: Control;
+        error?: FieldError;
+        required?: boolean;
+    };
+
+    type CountrySelectProps = {
+        name: string;
+        label: string;
+        control: Control;
+        error?: FieldError;
+        required?: boolean;
+    };
+
+    type FooterLinkProps = {
+        text: string;
+        linkText: string;
+        href: string;
+    };
+}
+
+export {};
