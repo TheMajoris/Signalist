@@ -29,6 +29,7 @@
     "mongodb": "^7.0.0",
     "mongoose": "^9.0.2",
     "next": "^15.5.7",
+    "nodemailer": "^7.0.12",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.68.0",
